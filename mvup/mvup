@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+# vim: filetype=sh syntax=sh
+
+if [ $# -gt 0 ]
+then
+  while [ "$1" != "" ]
+  do
+    mv "$1" "$(dirname "${1%/*}")"
+    shift
+  done
+else
+  echo Select files to move up
+  exit 0
+fi
